@@ -30,7 +30,7 @@ const Register = () => {
             .then(result => {
                 if (result.insertedId) {
                     alert('Registration Succesfully')
-                    history.push('/home');
+                    history.push('/dashboard');
                 }
             })
         e.preventDefault()

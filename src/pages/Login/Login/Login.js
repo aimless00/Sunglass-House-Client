@@ -19,7 +19,7 @@ const Login = () => {
 
     const handleSubmit = e => {
         logInUSer(loginData.email, loginData.password);
-        const destination = location?.state?.from || '/'
+        const destination = location?.state?.from || '/dashboard'
         history.replace(destination)
         e.preventDefault()
     }

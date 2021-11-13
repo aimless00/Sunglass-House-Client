@@ -16,7 +16,8 @@ const AddReview = () => {
         setReview(newReview);
     }
     const onSubmit = e => {
-        const addReview = { email: review.email, coustomerName: review.name, reviewText: review.reviewText, reviewNum: review.reviewNum }
+
+        const addReview = { email: user.email, coustomerName: user.displayName, reviewText: review.reviewText, reviewNum: review.reviewNum }
         fetch('https://fierce-garden-19986.herokuapp.com/review', {
             method: 'POST',
             headers: {
@@ -41,7 +42,7 @@ const AddReview = () => {
                 <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                     <Form.Label>Your Name</Form.Label>
                     <Form.Control
-                        required
+                        disabled
                         type="text"
                         name='name'
                         onBlur={handleOnBlur}
@@ -50,7 +51,7 @@ const AddReview = () => {
                 <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control
-                        required
+                        disabled
                         type="email"
                         name='email'
                         onBlur={handleOnBlur}

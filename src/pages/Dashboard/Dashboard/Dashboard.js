@@ -42,46 +42,48 @@ const Dashboard = (props) => {
         <div >
             <Toolbar />
             <List sx={{ textAlign: 'left', mx: '30px' }}>
-                <Link style={{ textDecoration: 'none', fontWeight: 'bold' }} to='/home'>Home</Link>
-                <li>
-                    <Link style={{ textDecoration: 'none', fontWeight: 'bold' }} to={`${url}`}>Dashboard</Link>
+                <Link style={{ textDecoration: 'none', padding: '8px 34px' }} className='fw-bold bg-info m-1 rounded' to='/home'>Home</Link>
+                <li className='mt-3'>
+                    <Link style={{ textDecoration: 'none', padding: '8px 13px' }} className='fw-bold bg-info m-1 rounded' to={`${url}`}>Dashboard</Link>
                 </li>
             </List>
             <Divider />
             <List>
                 {admin && <Box sx={{ textAlign: 'left', mx: '30px' }}>
-                    <li>
-                        <Link style={{ textDecoration: 'none', fontWeight: 'bold' }} to={`${url}/addProduct`}>Add Product</Link>
+                    <li className='mt-3'>
+                        <Link style={{ textDecoration: 'none', padding: '8px 26px' }} className='fw-bold bg-info m-1 rounded' to={`${url}/addProduct`}>Add Product</Link>
                     </li>
-                    <li>
-                        <Link style={{ textDecoration: 'none', fontWeight: 'bold' }} to={`${url}/manageOrders`}>Manage All Order</Link>
+                    <li className='mt-3'>
+                        <Link style={{ textDecoration: 'none', padding: '8px 20px' }} className='fw-bold bg-info m-1 rounded' to={`${url}/manageOrders`}>Manage Order</Link>
                     </li>
-                    <li>
-                        <Link style={{ textDecoration: 'none', fontWeight: 'bold' }} to={`${url}/manageProducts`}>Manage All Products</Link>
+                    <li className='mt-3'>
+                        <Link style={{ textDecoration: 'none', padding: '8px 7px' }} className='fw-bold bg-info m-1 rounded' to={`${url}/manageProducts`}>Manage Products</Link>
                     </li>
-                    <li>
-                        <Link style={{ textDecoration: 'none', fontWeight: 'bold' }} to={`${url}/makeAdmin`}>Make Admin</Link>
+                    <li className='mt-3'>
+                        <Link style={{ textDecoration: 'none', padding: '8px 26px' }} className='fw-bold bg-info m-1 rounded' to={`${url}/makeAdmin`}>Make Admin</Link>
                     </li>
+                    <Divider className='mt-3' />
                 </Box>}
                 {!admin && <Box sx={{ textAlign: 'left', mx: '30px', mt: '5px' }}>
-                    <li>
-                        <Link style={{ textDecoration: 'none', fontWeight: 'bold' }} to={`${url}/mayOrder`}>My Order</Link>
+                    <li className='mt-3 '>
+                        <Link style={{ textDecoration: 'none', padding: '8px 20px' }} className='fw-bold bg-info m-1 rounded' to={`${url}/mayOrder`}>My Order</Link>
                     </li>
-                    <li>
-                        <Link style={{ textDecoration: 'none', fontWeight: 'bold' }} to={`${url}/payment`}>Payment</Link>
+                    <li className='mt-3'>
+                        <Link style={{ textDecoration: 'none', padding: '8px 22px' }} className='fw-bold bg-info m-1 rounded' to={`${url}/payment`}>Payment</Link>
                     </li>
-                    <li>
-                        <Link style={{ textDecoration: 'none', fontWeight: 'bold' }} to={`${url}/review`}>Review</Link>
+                    <li className='mt-3'>
+                        <Link style={{ textDecoration: 'none', padding: '8px 9px' }} className='fw-bold bg-info m-1 rounded' to={`${url}/review`}>Add Review</Link>
                     </li>
                 </Box>}
-                <div style={{ marginTop: '100px', fontWeight: 'bold' }}>
-                    {user.email ? <div>
+                <div style={{ marginTop: '50px', fontWeight: 'bold' }}>
+                    {user.email ? <div className='mb-2'>
                         {user?.displayName}
+                        <br />
                         <Link to='/login'><Button onClick={logOut} variant='contained'>Log Out</Button></Link>
                     </div> : <Link to='/login'><Button variant='contained'>Login</Button></Link>}
                 </div>
-            </List>
-        </div>
+            </List >
+        </div >
     );
 
     const container = window !== undefined ? () => window().document.body : undefined;
